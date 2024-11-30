@@ -1,0 +1,10 @@
+(defstruct person
+  name age)
+
+(defun filter-ages (array age)
+  (let ((new-array (make-array 0 :adjustable t :fill-pointer 0)))
+    (dotimes (index (length array) new-array)
+      (if (> (person-age (aref array index)) age)
+          (progn
+            (vector-push-extend (person-name (aref array index)) new-array)))
+      )))

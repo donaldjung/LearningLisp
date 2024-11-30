@@ -1,0 +1,6 @@
+(defun getList (mylist)
+  (let ((result ()))
+    (dolist (i mylist)
+      (push i mylist))
+    ))
+

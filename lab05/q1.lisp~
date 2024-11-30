@@ -1,0 +1,23 @@
+(defstruct STACK
+  (elements (list))
+  )
+
+(defun create-stack ()
+  (make-stack)
+  )
+
+(defun stack-push (stack element)
+  (push stack-elements element)  
+  )
+
+(defun stack-pop (stack)
+  (pop stack-elemens element)
+  )
+
+(defun stack-top (stack)
+  (first (stack-elements stack))
+  )
+
+(defun stack-empty? (stack)
+  (if (null (stack-elements stack)) t nil)
+  )

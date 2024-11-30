@@ -1,0 +1,16 @@
+(defstruct movie
+  title director year type)
+
+(defun add-movie (movie array)
+  (if
+   (dotimes (index (length array))
+     (if (and (typep (aref array index) 'movie)
+              (equal (movie-title (aref array index)) (movie-title movie)))
+         (return t))
+     )
+   nil
+   (progn
+     (dotimes (index (length array))
+     (if (null (aref array index))
+         (setf (aref array index) movie)
+         (return array))))))

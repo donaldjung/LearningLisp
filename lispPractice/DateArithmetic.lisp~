@@ -1,0 +1,27 @@
+(defparameter month '(31 28 31 30 31 30 31 31 30 31 30 31))
+
+(setf sumdays (reverse (maplist #'(lambda (x) (apply #'+ x)) sumdays)))
+
+(defun leapyear? (year)
+  (and (zerop (mod year 4))
+       (or (zerop (mod year 400))
+           (not (zerop (mod year 100))))))
+
+(defun date->num (d m y)
+  (+ (- d 1) (month-num m y) (year-num y)))
+
+(defun month-num (m y)
+  (+ (svref month (- m 1))
+      (if (and (> m 2) (leapyear? y)) 1 0)))
+
+(defun year-num (y)
+  (let ((d 0))
+    (if (>= y yzero)
+        (dotimes (i (- y yzero) d)
+          (incf d (year-days (+ yzero i))))
+        (dotimes (i (- yzero y) (- d))
+          (incf d (year-days (+ y i)))))))
+
+(defun year-days (y) (if (leapyear? y) 366 365))
+
+

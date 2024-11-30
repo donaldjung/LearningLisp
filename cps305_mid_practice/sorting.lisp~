@@ -1,0 +1,31 @@
+(defun selection-sort (arr)
+  ;Two pointers
+  ;Pointer 1 keeps index of swap position
+  ;Pointer 2 iterates through array to find the next lowest value
+  ;O(N^2) worst case, O(N) best case
+  (let ((p2 1))
+    (dotimes (i (- (length arr) 1) arr)
+      (dotimes (j (- (length arr) p2) arr)
+        (if (> (aref arr p2) (aref arr j))
+            (rotatef (aref arr p2) (aref arr j)))
+        )
+      (print arr)
+      (print p2)
+      (print i)
+      (incf p2)
+      )
+    
+    )
+  )
+
+
+(defun binary-search (value array1 &optional (position 0))
+  
+ )
+
+  
+                                        ;(defun insertion-sort)
+                                        ;(defun merge-sort)
+                                        ;(defun quick-sort)
+
+

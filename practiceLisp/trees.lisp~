@@ -1,0 +1,17 @@
+(defstruct tree-node
+  value
+  left
+  right)
+
+;; Create an instance of the tree
+(let ((tree (make-tree-node
+              :value 1
+              :left (make-tree-node
+                      :value 2
+                      :left (make-tree-node :value 4)
+                      :right (make-tree-node :value 5))
+              :right (make-tree-node
+                       :value 3
+                       :left (make-tree-node :value 6)
+                       :right (make-tree-node :value 7)))))
+  tree)

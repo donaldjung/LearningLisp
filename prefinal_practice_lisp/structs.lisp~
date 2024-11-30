@@ -1,0 +1,9 @@
+(defstruct point1
+  x
+  y)
+
+(defstruct (point (:conc-name p)
+                  (:print-function print-point))
+  (x 0)
+  (y 0))
+

@@ -1,0 +1,22 @@
+(defstruct RECORD
+  name
+  score)
+(defun sort-student-records (records func)
+  (let ((new-list (list))
+        (counter 0))
+    (dolist (student records)
+      (if (null new-list) (setf new-list (list student)))
+      (setf counter 1)
+      (dolist (student2 new-list)
+        (if (funcall func student student2)
+            (progn
+              (setf new-list (append (subseq new-list 0 counter)
+                                   (list student)
+                                   (subseq new-list counter))))
+            (setf new-list (cons student new-list)))
+        (incf counter)
+        )
+      )
+    new-list
+    )
+  )

@@ -1,0 +1,7 @@
+(defun interleave (list1 list2)
+  (cond
+    ((and (null list1) (null list2)) ())
+    ((null list1) (cons (first list2) (interleave list1 (rest list2))))
+    ((null list2) (cons (first list1) (interleave (rest list1) list2)))
+    (t (cons (first list1) (interleave list2 (rest list1))))
+    ))
