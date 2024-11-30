@@ -1,0 +1,8 @@
+(defun get-sports (array1 array2 x)
+  (let ((array3 (make-array 0 :adjustable t :fill-pointer 0)))
+    (dotimes (index (length array1) array3)
+      (if (equal (aref array2 index) x)
+          (vector-push-extend (aref array1 index) array3))
+      )
+    )
+  )

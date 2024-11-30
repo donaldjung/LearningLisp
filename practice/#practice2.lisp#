@@ -1,0 +1,5 @@
+(defun sum-of-squares (n)
+  (let ((sum 0))
+    (dotimes (index n sum)
+      (setf sum (+ sum (* (+ index 1) (+ index 1)))))
+    ))
